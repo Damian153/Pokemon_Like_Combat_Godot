@@ -1,9 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://djhu2chittd2g"]
 
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://do7cyavlp0gom" path="res://Scenes/player_attacks_ui.tscn" id="1_nav3k"]
+=======
+[ext_resource type="PackedScene" uid="uid://bck1uwlkoj5kv" path="res://Scenes/parallax_background.tscn" id="1_2spnu"]
+>>>>>>> e7862577ddfb8451e8d170a9b8b0934e3e1316e2
 
 [node name="Main" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+<<<<<<< HEAD
 [node name="Player_Attack_UI" parent="CanvasLayer" instance=ExtResource("1_nav3k")]
+=======
+[node name="ParallaxBackground" parent="CanvasLayer" instance=ExtResource("1_2spnu")]
+>>>>>>> e7862577ddfb8451e8d170a9b8b0934e3e1316e2
