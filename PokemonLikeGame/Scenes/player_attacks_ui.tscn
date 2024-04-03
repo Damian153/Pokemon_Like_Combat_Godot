@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://do7cyavlp0gom"]
+[gd_scene load_steps=4 format=3 uid="uid://do7cyavlp0gom"]
 
-[ext_resource type="Texture2D" uid="uid://diojau4j2dljm" path="res://icon.svg" id="1_l0hqp"]
+[ext_resource type="Script" path="res://Scripts/player_attacks_ui.gd" id="1_ej54j"]
+[ext_resource type="Texture2D" uid="uid://diojau4j2dljm" path="res://Sprites/icon.svg" id="1_l0hqp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2hkb"]
 bg_color = Color(0.392157, 0.6, 0.372549, 1)
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ej54j")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -27,6 +29,16 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_a2hkb")
 
+[node name="Attack" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 33.0
+offset_right = 1228.0
+offset_bottom = 104.0
+scale = Vector2(0.99, 1.153)
+theme_override_font_sizes/font_size = 30
+text = "ATTACK"
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 157.0
@@ -34,3 +46,29 @@ offset_top = 214.0
 offset_right = 285.0
 offset_bottom = 342.0
 texture = ExtResource("1_l0hqp")
+
+[node name="hp_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -220.0
+offset_right = 234.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 171
+text = "HP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Panel/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Panel/Attack" to="." method="_on_button_pressed"]
