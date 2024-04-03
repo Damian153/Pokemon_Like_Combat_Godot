@@ -1,3 +1,3 @@
 extends Node
 
-var hp=100
+var hp=1000
